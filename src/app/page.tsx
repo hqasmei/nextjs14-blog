@@ -9,9 +9,9 @@ export default function Home() {
 
   useEffect(() => {
     // Redirect to the desired URL
-    router.replace('http://localhost:3000/posts');
+    router.replace('http://nextjs14-blog-nine.vercel.app/posts');
   }, [router]);
 
   // Return null since we are redirecting
   return null;
-}
+} 
