@@ -8,10 +8,10 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to the desired URL
-    router.replace('http://nextjs14-blog-nine.vercel.app/posts');
+    const origin = window.location.origin;
+    router.replace(`${origin}/posts`);
   }, [router]);
 
   // Return null since we are redirecting
   return null;
-} 
+}
