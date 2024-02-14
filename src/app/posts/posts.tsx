@@ -5,15 +5,9 @@ import React from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 
-import { calculateReadingTime, reformatDate } from '@/lib/utils';
+import { reformatDate } from '@/lib/utils';
 
-export default function Posts({
-  allPosts,
-  views,
-}: {
-  allPosts: any;
-  views: any;
-}) {
+export default function Posts({ allPosts }: { allPosts: any }) {
   const searchParams = useSearchParams();
   const tag = searchParams.get('tag');
 
@@ -26,7 +20,7 @@ export default function Posts({
       <div className="grid grid-cols-1 gap-10 pb-10">
         <div className="flex flex-col">
           <span className="text-4xl font-bold md:px-6 mb-6 md:mb-4">
-            My Blog
+          My Blog
           </span>
 
           <div>
@@ -55,12 +49,6 @@ export default function Posts({
 
                         <div className="flex flex-row space-x-2 items-center text-secondaryDarker">
                           <span>{reformatDate(post.metadata.publishedAt)}</span>
-                          <span className="h-1 w-1 rounded-full bg-secondaryDarker" />
-                          <span>{views[post.slug]} views</span>
-                          <span className="h-1 w-1 rounded-full bg-secondaryDarker" />
-                          <span>
-                            {calculateReadingTime(post.content)} min read
-                          </span>
                         </div>
                       </div>
 
